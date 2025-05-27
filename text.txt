@@ -1,0 +1,69 @@
+What is python ??
+python is high level programming language, used in web development, AI and ML.Easy to understand and readable.
+--> High level means Easy to understand for humans.
+--> Low Level means Closer to Machine Hardware ex.Machine Language and Assembly Language.
+
+What are the data types in python??
+Premitive -> int str bool etc..
+Derived -> List ,Tupple etc..
+
+List -> 'Ordered' 'Mutable' 'Duplicate allows' 'str int can used.'
+Tupple -> 'Ordered' ''Immutable' 'Duplicate allows' 'mix data types like above.' 
+Set -> 'UnOrdered' 'Mutable' 'Duplicate does not allow' ** Important for methamatics calculations..
+Dictionary -> 'UnOrdered untill python 3.6 ' 'Mutable' 'Unique keys' 'Values can be of any  data types'
+
+Key Features of Python -> Simple syntax , interpreted language(code will execute line by line and do not need 
+compiler like java) , Dynamically types language and OOps..
+
+--> Python uses Garbage Collection to manage memory..
+NameSpace -> Its like a container which holds name (Identifiers) and their respective values or like a dict..
+
+How do you define a function in python ?
+def add(a,b):
+return a+b
+
+List Comprehensions -> I want to excute a loop from 0 to 9 and want to write my code in single line or 
+concise way
+numbers_list = [x for x in range(10) if x % 2 == 0]
+print(numbers_list)
+
+Decorator -> Decorator is the functions that modifies behaviours of another function.
+
+Self --> It refers to the current instance of the class and used to access variables of a class..
+
+Generators --> It is a special type of function that returns one value at a time with yield keyword to save memory.
+
+args --> Positional arguments 
+kwargs --> keyword arguments like context = mycontext
+
+Shallow copy --> It is affected when we update our list..
+Deep copy --> It is not affected because recursively copies all nested objects..
+
+Exceptions in python --> try and except keywords..
+try:
+ number/0
+except ZeroDivisionError:
+ print('Cannot divide by zero') 
+
+MetaClass --> Its a class that creates classes.class is an instance of a MetaClass..
+
+GIL --> Global interpreter lock (It allows to execute one thread at a time..)
+
+MonkeyPatching --> We have to change behaviour of a cllss with changing its original code..
+
+Python2 --> We do not use paranthesis with print function and return integer after divison..
+Python3 --> We use paranthesis with print function and return true fraction after divison..
+
+Integer Mwemory --> GC(Grabage Collector) from -5 to 256 same memory but outside range different address..
+String Memory --> GC(Garbage Collector) s1 =  hello and s2 = hello both are same meory but ''.join(['h','e','l','l','o'])
+it will have different memory in heap..
+
+Instance method --> takes self as an argument and works like a regular function..
+Static method --> It does not take nither self nor cls , access from class Name..
+Classmethod --> takes cls as an argument and can be accessed only class level data..
+
+
+--> __init__ initializes an instance of a class while __new__ creates new instance..
+
+--> len() is a function to find out length while __len__() is a spe3cial method in class 
+which allows to work with len()..
