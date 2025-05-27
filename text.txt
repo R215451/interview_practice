@@ -65,5 +65,5 @@ Classmethod --> takes cls as an argument and can be accessed only class level da
 
 --> __init__ initializes an instance of a class while __new__ creates new instance..
 
---> len() is a function to find out length while __len__() is a spe3cial method in class 
+--> len() is a function to find out length while __len__() is a special method in class 
 which allows to work with len()..
