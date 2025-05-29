@@ -1,3 +1,4 @@
+from num2words import num2words
 class Elearning:
     # Linear Search From List
     def linear_search(self,number,data_list):
@@ -51,7 +52,96 @@ class Elearning:
         if temp>0:
             return 'Not Prime Number'
         else:
-            return 'Prime Number'        
+            return 'Prime Number'
+
+    # Bubble Sort
+    def bubble_sort(self,data_list):
+        temp=0
+        for i in range(len(data_list)):
+            for j in range(len(data_list)-1):
+                if data_list[j] > data_list[j+1]:
+                    temp = data_list[j+1]
+                    data_list[j+1] = data_list[j]
+                    data_list[j] = temp
+        return data_list
+    # Occurence Of Duplicates In List
+    def occurence_duplicates(self,list_data):
+        duplicates=0
+        empty_list = []
+        for data in list_data:
+            if data not in empty_list:
+                empty_list.append(data)
+            else:
+                duplicates=duplicates+1
+        return duplicates
+    
+    # Dict Problem
+    def dict_problem_python(self):
+        student_record = {
+            'name':'abc',
+            'rollNumber':77,
+            'address':{
+                'city':'Kota',
+                'state':'Rajasthan',
+                'phone':'+91 9166.......'
+            }
+        }
+        print(student_record['address']['city'])
+
+    # Copy List
+    def copy_list(self,data_list):
+        empty_list = []
+        for data in data_list:
+            empty_list.append(data)
+        return empty_list
+
+    # Occurence Of List Numbers
+    def occurence_list_numbers(self,data_list):
+        freq_dict = {}
+        for data in data_list:
+            if data in freq_dict:
+                freq_dict[data] = freq_dict[data]+1 
+            else:
+                freq_dict[data] = 1
+        return freq_dict
+    
+    # Reverse Name By Words
+    def reverse_name_words(self,name):
+        new_name =name.split()
+        return new_name[::-1]  
+
+    # Conversion from number to words
+    def num_2_words(self,user_number):
+        return num2words(user_number)
+        
+    # Check Prime Number
+    def check_prime(self,number):
+        temp=0
+        for num in range(2,number):
+            if number % num == 0:
+                temp = temp+1
+        if temp>0:
+            return False
+        else:
+            return True
+
+    # Allternative Prime Numbers
+    def allternative_prime_numbers(self,limit):
+        new_list = []
+        result_list = []
+
+        for number in range(2,limit+1):
+            if self.check_prime(number):
+                new_list.append(number)
+        for data in range(0,len(new_list),2):
+             result_list.append(new_list[data])
+                 
+        return result_list                    
+                     
+
+
+
+                  
 
 
 
@@ -59,7 +149,16 @@ class Elearning:
 
 
 e_learn = Elearning()
-print(e_learn.prime_number_check(7))
+while True:
+    try:
+        user_num = int(input('Enter a Valid Number :: '))
+        break
+    except ValueError:
+        print("That's not a valid number. Please try again.")
+print(e_learn.allternative_prime_numbers(user_num))            
+
+
+
 
  
 
