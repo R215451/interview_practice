@@ -1,4 +1,5 @@
 from num2words import num2words
+import string
 class Elearning:
     # Linear Search From List
     def linear_search(self,number,data_list):
@@ -136,8 +137,66 @@ class Elearning:
         for data in range(0,len(new_list),2):
              result_list.append(new_list[data])
                  
-        return result_list                    
-                     
+        return result_list
+    
+    # HCF LCM 
+    def lcm_hcf(self,num1,num2):
+        final_answer = 0
+        lcm = 0
+        for data in range(1,num1+1):
+            if num1 % data == 0 and num2 % data == 0:
+                final_answer = data
+        lcm = (num1*num2)//final_answer
+        print(lcm)
+        return final_answer                            
+
+    # Total Number Of Characters In String
+    def num_of_char_str(self,name):
+        l=0
+        for i in name:
+            l = l+1 
+        return f"Length of given string {name} is :: {l}"
+                        
+    # Calculate Vowels and Consonants
+    def count_vowel_consonants(self,name):
+        vowels=0
+        consonants=0
+        special = 0
+        digits=0
+        for item_char in name:
+            if item_char == 'a' or item_char == 'e' or item_char == 'i' or item_char == 'o' or item_char == 'u':
+                vowels+=1
+            elif item_char in string.punctuation:
+                special+=1
+            elif item_char == '0' or item_char == '1' or item_char == '2' or item_char == '3' or item_char == '4' or item_char == '5' or item_char == '6' or item_char == '7' or item_char == '8' or item_char == '9':
+                digits+=1
+            else:
+                consonants+=1
+        return f"Total Vowels are : {vowels} and Consonants are : {consonants} and Digits are : {digits} and Special Characters are : {special}"
+    
+    # Anagrams Strings 
+    def anagrams_strings(self,str1,str2):
+        str1 = str1.replace(' ','').lower()
+        str2 = str2.replace(' ','').lower()
+        sorted(str1)
+        sorted(str2)
+        if sorted(str1) == sorted(str2):
+            return 'Anagrams'
+        else:
+            return 'Not Anagrams'
+
+    # Max and Min Occurence In a String
+    def min_max_occur_str(self,name):
+        new_dict = {}
+        for i in name:
+            if i in new_dict:
+                new_dict[i] = new_dict[i] + 1
+            else:
+                new_dict[i] = 1
+        print(max(new_dict,key=new_dict.get))
+        print(new_dict[max(new_dict,key=new_dict.get)]) 
+
+        return f"{max(new_dict,key=new_dict.get)} is key and frequency are {new_dict[max(new_dict,key=new_dict.get)]}"                   
 
 
 
@@ -149,13 +208,14 @@ class Elearning:
 
 
 e_learn = Elearning()
-while True:
-    try:
-        user_num = int(input('Enter a Valid Number :: '))
-        break
-    except ValueError:
-        print("That's not a valid number. Please try again.")
-print(e_learn.allternative_prime_numbers(user_num))            
+# while True:
+#     try:
+#         user_num = int(input('Enter a Valid Number :: '))
+#         break
+#     except ValueError:
+#         print("That's not a valid number. Please try again.")
+
+print(e_learn.min_max_occur_str('hdefhgifegihh'))            
 
 
 
